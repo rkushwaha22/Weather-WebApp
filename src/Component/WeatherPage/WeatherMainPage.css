@@ -1,0 +1,221 @@
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-section h1 {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.nav-icon {
+    width: 40px;
+    height: auto;
+}
+
+/* Search Bar Modern look */
+.search-container {
+    display: flex;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 5px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-container input {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    color: white;
+    width: 200px;
+}
+
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-container button {
+    background: white;
+    color: #1e3c72;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: #00d2ff;
+    color: white;
+}
+
+/* Hero Text */
+.hero-text {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 40px 0 20px;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+/* Category/Quick City Buttons */
+.quick-cities {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.quick-cities button {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quick-cities button:hover,
+.quick-cities button.active-btn {
+    background: rgba(255, 255, 255, 0.9);
+    color: #1e3c72;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Selected button ko aur premium banane ke liye */
+.quick-cities button.active-btn {
+    background: #ffffff !important;
+    color: #1e3c72 !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4) !important;
+    transform: scale(1.05); /* Thoda sa bada dikhega */
+}
+
+/* --- Mobile Responsive Updates --- */
+
+@media (max-width: 600px) {
+
+    /* Navbar ko aur compact banaya */
+    .navbar {
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo-section h1 {
+        font-size: 1.2rem;
+    }
+
+    .nav-icon {
+        width: 30px;
+    }
+
+    /* Search bar ko full width kiya */
+    .search-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 4px;
+    }
+
+    .search-container input {
+        width: 100%;
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .search-container button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* Hero text mobile par chota dikhega */
+    .hero-text {
+        font-size: 1.2rem;
+        margin: 25px 10px 15px;
+        line-height: 1.4;
+    }
+
+    /* Quick City Buttons - Horizontal Scroll if too many */
+    .quick-cities {
+        gap: 8px;
+        padding: 0 10px;
+        display: flex;
+        overflow-x: auto;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .quick-cities::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
+    }
+
+    .quick-cities button {
+        flex: 0 0 auto;
+        /* Buttons shrink nahi honge */
+        padding: 6px 14px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+}
+
+/* Very small devices (e.g. iPhone SE) */
+@media (max-width: 360px) {
+    .logo-section h1 {
+        font-size: 1rem;
+    }
+
+    .search-container button {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    /* Humne isse 'important' aur 'flex-nowrap' ke saath lock kar diya hai */
+    .quick-cities {
+        display: flex !important;
+        flex-direction: row !important; /* Buttons ko line mein rakhne ke liye */
+        flex-wrap: nowrap !important; /* Line break hone se rokne ke liye */
+        justify-content: flex-start !important; 
+        overflow-x: auto !important; 
+        padding: 15px !important;
+        gap: 10px !important;
+        width: 100% !important;
+        scrollbar-width: none; 
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling for iPhone */
+    }
+
+    .quick-cities::-webkit-scrollbar {
+        display: none !important; 
+    }
+
+    .quick-cities button {
+        flex: 0 0 auto !important; /* Ye sabse zaruri hai: buttons ko squeeze nahi hone dega */
+        min-width: 100px;
+        white-space: nowrap;
+    }
+}
