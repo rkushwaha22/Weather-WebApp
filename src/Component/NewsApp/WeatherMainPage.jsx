@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./NewsApp.css";
+import "./WeatherMainPage.css";
 import Card from '../Card/Card';
 import iconw from "./icon.png";
 
