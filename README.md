@@ -1,12 +1,36 @@
-# React + Vite
+# ☁️ Live Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Stay updated with real-time weather conditions! This application fetches live data from the **OpenWeatherMap API** to provide accurate temperature, humidity, and wind speed for any city globally.
 
-Currently, two official plugins are available:
+🌐 **Live Demo:** [https://itsliveweather.netlify.app](https://itsliveweather.netlify.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Key Features
+- **Global Search:** Get weather details for any city by simply typing its name.
+- **Real-Time Data:** Fetches live temperature, humidity, wind speed, and weather descriptions.
+- **Dynamic Icons:** Displays weather-specific icons (Sun, Clouds, Rain, etc.) based on the current weather condition.
+- **Metric Units:** Temperature is displayed in Celsius for easy understanding.
+- **Fully Responsive:** Beautifully designed UI that works perfectly on all screen sizes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** React.js
+- **Styling:** CSS
+- **API:** [OpenWeatherMap API](https://openweathermap.org/api)
+- **Data Fetching:** Axios / Fetch API
+
+---
+
+## ⚙️ How It Works
+1. **User Input:** The user enters a city name in the search bar.
+2. **API Call:** The app sends a request to the `data/2.5/weather` endpoint with the city name and API Key.
+3. **State Management:** The JSON response is parsed and stored in React state to update the UI dynamically without a page reload.
+
+---
+
+## 🚀 Local Setup
+1. Clone the repo:
+   ```bash
+   git clone [https://github.com/itsrkdev/Weather-App.git](https://github.com/itsrkdev/Weather-App.git)
